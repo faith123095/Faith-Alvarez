@@ -22,7 +22,7 @@
     cursor: var(--spider) 18 18, auto; }
   a, button, .row, .node { cursor: var(--ring) 20 20, pointer; }
 
-  /* background video: white lines are tinted blue, black stays black */
+
   .bgvid { position: fixed; inset: 0; z-index: -2; overflow: hidden; background: var(--bg); pointer-events: none; }
   .bgvid video { width: 100%; height: 100%; object-fit: cover; opacity: .6; display: block; }
   .bgvid::before { content: ""; position: absolute; inset: 0; background: var(--blue); mix-blend-mode: multiply; z-index: 1; }
@@ -32,7 +32,7 @@
       radial-gradient(ellipse at 10% 95%, rgba(59, 108, 255, .22), transparent 50%),
       radial-gradient(ellipse at 40% 30%, rgba(5, 5, 5, .1), rgba(5, 5, 5, .78) 85%); }
 
-  /* spider-web corners */
+  
   .web { position: fixed; width: min(260px, 42vw); aspect-ratio: 1; z-index: -1; opacity: .45; pointer-events: none; }
   .web.tl { top: 0; left: 0; }
   .web.br { bottom: 0; right: 0; transform: rotate(180deg); }
@@ -42,7 +42,7 @@
   :focus-visible { outline: 3px solid var(--red); outline-offset: 5px; }
   h1, h2, h3, .display { font-family: Bangers, "Comic Sans MS", system-ui, sans-serif; font-weight: 400; letter-spacing: .03em; margin: 0; line-height: 1.05; }
 
-  /* glowing circle that follows the cursor */
+  
   .glow { position: fixed; left: 0; top: 0; width: 240px; height: 240px; margin: -120px 0 0 -120px; border-radius: 50%;
     pointer-events: none; z-index: 9; opacity: 0; mix-blend-mode: screen; will-change: transform;
     transition: opacity .3s, width .25s, height .25s, margin .25s;
@@ -53,14 +53,14 @@
   .glow.big { width: 330px; height: 330px; margin: -165px 0 0 -165px; }
   @media (pointer: coarse) { .glow { display: none; } }
 
-  /* top */
+  
   .top { display: flex; justify-content: space-between; align-items: center; padding: 22px 0; }
   .top .logo { font-family: Bangers, "Comic Sans MS", sans-serif; font-size: 2rem; letter-spacing: .04em; text-decoration: none; color: var(--red); text-shadow: 2px 2px 0 #000; }
   .top nav { display: flex; gap: 20px; flex-wrap: wrap; justify-content: flex-end; }
   .top nav a { white-space: nowrap; text-decoration: none; color: var(--muted); font-weight: 700; }
   .top nav a:hover { color: var(--red); }
 
-  /* hero */
+ 
   .hero { display: grid; grid-template-columns: 1fr 190px; gap: 36px; align-items: end; padding: 48px 0 44px; }
   .hero h1 { font-size: clamp(4rem, 15vw, 8rem); color: var(--red); text-shadow: 4px 4px 0 var(--blue-deep), 8px 8px 0 #000; }
   .bubble { position: relative; max-width: 50ch; margin: 30px 0 0; padding: 16px 22px; background: #fff; color: #0b0b14; font-size: 1.08rem; font-weight: 500;
@@ -71,7 +71,7 @@
     display: grid; place-items: center; font: 400 4rem Bangers, "Comic Sans MS", sans-serif; color: var(--red); }
   .pic img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-  /* system flow */
+  
   .how { padding: 28px 0 64px; }
   .how h2 { font-size: 1.7rem; color: var(--soft); margin-bottom: 22px; text-shadow: 3px 3px 0 var(--blue-deep); }
   .flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 34px; list-style: none; padding: 0; margin: 0; }
@@ -88,7 +88,7 @@
   @keyframes pulse { from { background-position: 100% 0; } to { background-position: -100% 0; } }
   #flowText { margin: 26px 0 0; padding: 18px 20px; border-left: 5px solid var(--red); background: var(--panel); border-radius: 0 12px 12px 0; max-width: 62ch; }
 
-  /* work */
+  
   section.block { padding: 48px 0; border-top: 3px solid var(--line); }
   section.block > h2 { font-size: clamp(2.2rem, 6vw, 3.2rem); margin-bottom: 26px; color: var(--soft); text-shadow: 3px 3px 0 var(--blue-deep); }
   .row { display: grid; grid-template-columns: 1.1fr 1.5fr; gap: 8px 28px; padding: 22px 16px; margin: 0 -16px; text-decoration: none; border-radius: 14px; }
@@ -271,11 +271,11 @@
 
   var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // background video
+  
   var bgv = document.getElementById('bgvideo');
   if (still) { bgv.removeAttribute('autoplay'); bgv.pause(); }
 
-  // music button
+  
   var bgm = document.getElementById('bgm');
   var musicBtn = document.getElementById('musicBtn');
   bgm.volume = 0.5;
@@ -291,7 +291,7 @@
     }
   });
 
-  // glowing circle that follows the cursor (mouse devices only)
+ 
   var glow = document.getElementById('glow');
   if (!window.matchMedia('(pointer: fine)').matches) {
     glow.remove();
